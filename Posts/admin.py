@@ -23,7 +23,8 @@ class ProfileAdmin(admin.ModelAdmin):
             group = Group.objects.get(name="ProfileGroup")
             group.user_set.add(u)
             obj.profile_user = u
-            super().save_model(request, obj, form, change)
+
+        obj.save()
 
     def has_change_permission(self, request, obj=None):
         if obj:

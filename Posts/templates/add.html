@@ -1,0 +1,13 @@
+{% extends 'template.html' %}
+
+{% block content %}
+    <div class="container mt-5">
+        <span class="display-3 align-self-center mb-5">Add Post</span>
+        <form action="" method="post" class="mb-5">
+            {% csrf_token %}
+            {{ form }}
+            <input type="submit" value="Submit" class="btn btn-success mt-3 mb-5">
+        </form>
+    </div>
+
+{% endblock %}

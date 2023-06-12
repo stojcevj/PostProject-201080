@@ -3,6 +3,7 @@ from django.db import models
 from datetime import datetime
 
 # Create your models here.
+# Passwords: testuser123
 
 
 class Profile(models.Model):

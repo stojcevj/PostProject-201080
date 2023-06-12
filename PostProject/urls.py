@@ -19,7 +19,13 @@ from django.contrib import admin
 from django.conf import settings
 from django.urls import path
 
+from Posts.views import post_add, profile, posts, blocked_users
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('add/post', post_add, name='post_add'),
+    path('posts', posts, name='posts'),
+    path('profile', profile, name='profile'),
+    path('blockedUsers', blocked_users, name='blocked_users'),
+    path('', posts, name='posts')
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

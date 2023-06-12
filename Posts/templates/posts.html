@@ -1,0 +1,24 @@
+{% extends 'template.html' %}
+
+{% block content %}
+    <div class="container mt-5">
+    <span class="display-3 align-self-center mb-5">Posts</span>
+        {% for post in posts %}
+            <div class="card mb-3" class="w-100">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <img src="{{ MEDIA_URL }}/images/images/post.png/" class="img-fluid rounded-start" alt="...">
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-title">{{ post.post_title }}</h5>
+                    <p class="card-text">{{ post.post_content }}</p>
+                    <p class="card-text"><small class="text-body-secondary">Author: {{ post.post_profile }}</small></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+        {% endfor %}
+
+    </div>
+{% endblock %}
